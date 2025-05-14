@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI; 
+using TMPro;
 using UnityEngine.EventSystems; // Add this at the top of your file
 
 
@@ -12,15 +14,25 @@ public class DrawingManager : MonoBehaviour
     private LineRenderer currentLine;
     private List<Vector3> points = new List<Vector3>();
     private List<GameObject> drawnLines = new List<GameObject>();
+    public CursorSphereController cursorSphere;
+    private Color currentColor = Color.black;
+    private float brushSize = 0.1f; // also used for line width
 
     private bool is3DMode = false;
     public bool isDrawingEnabled = true;
+
+    public TMP_Dropdown colorDropdown;
+    public TMP_Dropdown sizeDropdown;
 
     void Update()
     {
         if (!isDrawingEnabled) return;
 
-        // 🛑 Prevent drawing when clicking on UI
+        // Handle color & size update
+        cursorSphere.SetColor(currentColor);
+        cursorSphere.SetSize(lineWidth);
+
+        // Prevent drawing when clicking on UI
         if (EventSystem.current.IsPointerOverGameObject())
             return;
 
@@ -46,6 +58,13 @@ public class DrawingManager : MonoBehaviour
         GameObject lineObj = new GameObject("Line");
         currentLine = lineObj.AddComponent<LineRenderer>();
         currentLine.material = lineMaterial;
+
+        MaterialPropertyBlock mpb = new MaterialPropertyBlock();
+        mpb.SetColor("_Color", currentColor);
+        currentLine.SetPropertyBlock(mpb);
+
+
+
         currentLine.widthMultiplier = lineWidth;
         currentLine.positionCount = 0;
         currentLine.useWorldSpace = true;
@@ -79,6 +98,70 @@ public class DrawingManager : MonoBehaviour
         is3DMode = true;
         // Later: Enable 3D drawing logic
     }
+
+    public void OnColorDropdownChanged(TMP_Dropdown dropdown)
+    {
+        string selectedColor = dropdown.options[dropdown.value].text.ToLower();
+
+        switch (selectedColor)
+        {
+            case "black":
+                SetColor(Color.black);
+                break;
+            case "red":
+                SetColor(Color.red);
+                break;
+            case "blue":
+                SetColor(Color.blue);
+                break;
+            case "green":
+                SetColor(Color.green);
+                break;
+            default:
+                SetColor(Color.black);
+                break;
+        }
+    }
+
+    public void SetColor(Color newColor)
+    {
+        currentColor = newColor;
+        lineMaterial.color = newColor;
+    }
+
+    public void OnSizeDropdownChanged(TMP_Dropdown dropdown)
+    {
+        string selectedColor = dropdown.options[dropdown.value].text.ToLower();
+
+        switch (selectedColor)
+        {
+            case "size 1":
+                SetBrushSize(0.1f);
+                break;
+            case "size 2":
+                SetBrushSize(0.25f);
+                break;
+            case "size 3":
+                SetBrushSize(0.5f);
+                break;
+            case "size 4":
+                SetBrushSize(0.75f);
+                break;
+            default:
+                SetBrushSize(0.1f);
+                break;
+        }
+
+        // Also update lineWidth so it's used in CreateLine
+        lineWidth = brushSize;
+        cursorSphere.SetSize(lineWidth);
+    }
+
+    public void SetBrushSize(float newSize)
+    {
+        brushSize = newSize;
+    }
+   
 
     public void UndoCanvas()
     {
