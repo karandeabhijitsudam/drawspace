@@ -1,33 +1,34 @@
-🎨 DrawSpace – A Web-Based VR Drawing Experience
-
-DrawSpace is an experimental web-based drawing tool designed to bridge traditional 2D drawing with immersive 3D/VR capabilities. Starting with mouse-based input for freehand sketching, the project lays the foundation for a fully immersive spatial drawing experience in virtual reality.
+🎨 DrawSpace – Web-Based VR Drawing Experience
+DrawSpace is an experimental drawing application that bridges traditional 2D sketching with immersive 3D/VR environments. Initially designed for mouse-based input, this project sets the stage for a fully interactive, spatial drawing experience using WebXR.
 
 🚀 Features
+🖱️ Mouse-Driven 2D Drawing
+Prototype enables smooth freehand sketching using standard mouse input.
 
-🖱️ Mouse-driven 2D drawing (initial prototype)
+🎚️ Adjustable Line Width & Dynamic Colors
+Customize brush size and color on the fly.
 
-🎚️ Adjustable line width and dynamic color support
+🧠 Efficient Memory Usage
+Each line uses a material property block for optimized performance.
 
-🧠 Efficient memory handling with per-line material customization
-
-🕹️ Designed for future expansion into full VR (WebXR-ready)
+🕹️ WebXR-Ready
+Engineered with future VR input compatibility in mind.
 
 🛠️ Tech Stack
-
-Unity (WebGL build)
+Unity (WebGL Build)
 
 C#
 
-Basic WebXR compatibility (for future VR input integration)
+WebXR Export Plugin (planned for future integration)
 
 🧩 Upcoming Features
+🎮 VR Controller-Based 3D Drawing
+Draw in 3D space using hand-held controllers.
 
-VR controller-based 3D drawing in space
-
-Gesture and voice interaction
-
-Save/load drawn sketches as 3D assets
+💾 Sketch Persistence
+Save and load drawings as reusable 3D assets.
 
 💡 Motivation
+DrawSpace began as a personal exploration into spatial computing and immersive interaction design. The focus is on creating intuitive tools for creative expression in virtual environments — emphasizing lightweight performance, expandability, and meaningful UX.
 
-This project was initiated as a personal learning journey in spatial computing and immersive interfaces. The goal is to explore intuitive ways to express creativity in digital space, with a focus on lightweight performance and extensibility.
+🔧 This project is under active development. Feedback and collaboration ideas are welcome!
