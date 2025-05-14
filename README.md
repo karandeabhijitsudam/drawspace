@@ -1,34 +1,37 @@
-🎨 DrawSpace – Web-Based VR Drawing Experience
-DrawSpace is an experimental drawing application that bridges traditional 2D sketching with immersive 3D/VR environments. Initially designed for mouse-based input, this project sets the stage for a fully interactive, spatial drawing experience using WebXR.
+# 🎨 DrawSpace – Web-Based VR Drawing Experience
 
-🚀 Features
-🖱️ Mouse-Driven 2D Drawing
-Prototype enables smooth freehand sketching using standard mouse input.
+**DrawSpace** is an experimental drawing application that bridges traditional 2D sketching with immersive 3D/VR environments. Initially designed for mouse-based input, this project sets the stage for a fully interactive, spatial drawing experience using WebXR.
 
-🎚️ Adjustable Line Width & Dynamic Colors
-Customize brush size and color on the fly.
+## 🚀 Features
 
-🧠 Efficient Memory Usage
-Each line uses a material property block for optimized performance.
+- 🖱️ **Mouse-Driven 2D Drawing**  
+  Prototype enables smooth freehand sketching using standard mouse input.
 
-🕹️ WebXR-Ready
-Engineered with future VR input compatibility in mind.
+- 🎚️ **Adjustable Line Width & Dynamic Colors**  
+  Customize brush size and color on the fly.
 
-🛠️ Tech Stack
-Unity (WebGL Build)
+- 🧠 **Efficient Memory Usage**  
+  Each line uses a material property block for optimized performance.
 
-C#
+- 🕹️ **WebXR-Ready**  
+  Engineered with future VR input compatibility in mind.
 
-WebXR Export Plugin (planned for future integration)
+## 🛠️ Tech Stack
 
-🧩 Upcoming Features
-🎮 VR Controller-Based 3D Drawing
-Draw in 3D space using hand-held controllers.
+- **Unity** (WebGL Build)  
+- **C#**  
+- **WebXR Export Plugin** *(planned for future integration)*
 
-💾 Sketch Persistence
-Save and load drawings as reusable 3D assets.
+## 🧩 Upcoming Features
 
-💡 Motivation
-DrawSpace began as a personal exploration into spatial computing and immersive interaction design. The focus is on creating intuitive tools for creative expression in virtual environments — emphasizing lightweight performance, expandability, and meaningful UX.
+- 🎮 **VR Controller-Based 3D Drawing**  
+  Draw in 3D space using hand-held controllers.
 
-🔧 This project is under active development. Feedback and collaboration ideas are welcome!
+- 💾 **Sketch Persistence**  
+  Save and load drawings as reusable 3D assets.
+
+## 💡 Motivation
+
+DrawSpace began as a personal exploration into **spatial computing** and **immersive interaction design**. The focus is on creating intuitive tools for creative expression in virtual environments — emphasizing lightweight performance, expandability, and meaningful UX.
+
+> 🔧 *This project is under active development. Feedback and collaboration ideas are welcome!*
